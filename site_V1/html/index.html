@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MarketAI - Analyse de Marché Intelligente</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="css/style.css">
     <!-- Leaflet CSS pour la carte interactive -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -158,6 +158,46 @@
                 Analyse de marché basée sur les données ouvertes françaises
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // Loader dynamique pour gérer ouverture locale (file://) depuis le dossier html/
+        (function() {
+            try {
+                const isFile = window.location.protocol === 'file:';
+                const path = window.location.pathname || '';
+
+                const prodCss = 'css/style.css';
+                const prodJs = 'js/script.js';
+                const localCss = '../css/style.css';
+                const localJs = '../js/script.js';
+
+                let cssHref = prodCss;
+                let jsSrc = prodJs;
+
+                if (isFile && path.includes('/html/')) {
+                    cssHref = localCss;
+                    jsSrc = localJs;
+                }
+
+                // Mettre à jour ou ajouter le lien CSS
+                let cssLink = document.querySelector('link[rel=stylesheet][href]');
+                if (cssLink) {
+                    cssLink.href = cssHref;
+                } else {
+                    cssLink = document.createElement('link');
+                    cssLink.rel = 'stylesheet';
+                    cssLink.href = cssHref;
+                    document.head.appendChild(cssLink);
+                }
+
+                // Charger le script principal dynamiquement
+                const s = document.createElement('script');
+                s.src = jsSrc;
+                s.defer = true;
+                document.body.appendChild(s);
+            } catch (e) {
+                console.error('Erreur loader local CSS/JS:', e);
+            }
+        })();
+    </script>
 </body>
 </html>

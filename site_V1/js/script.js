@@ -1,5 +1,8 @@
 // Configuration
 const API_URL = window.location.origin;
+// Détecter mode statique (ouverture file://) et état du backend
+const IS_STATIC = window.location.protocol === 'file:';
+let BACKEND_AVAILABLE = false;
 
 // Elements DOM
 const analyzeForm = document.getElementById('analyzeForm');
@@ -39,6 +42,37 @@ async function handleAnalyze(e) {
     // Mesurer le temps
     const startTime = Date.now();
     
+    // Si mode statique ou backend indisponible, afficher résultats mock côté client
+    if (IS_STATIC || !BACKEND_AVAILABLE) {
+        // Simuler un petit délai
+        setTimeout(() => {
+            const now = new Date();
+            const mockData = {
+                sector,
+                location,
+                timestamp: now.toISOString(),
+                client_time: ((Date.now() - startTime) / 1000).toFixed(1),
+                ia_enabled: false,
+                ai_analysis: null,
+                market_steps: {
+                    step1: { title: 'Taille du marché 📊', insights: ['1️⃣ 8 datasets trouvés', '2️⃣ ~15 ressources et rapports disponibles', 'Le marché semble de taille moyen/grand'] },
+                    step2: { title: 'Clientèle cible 👥', insights: ['Jeunes professionnels: 25-34 ans', 'PME locales', 'Consommateurs urbains'] },
+                    step3: { title: 'Offre concurrentielle', insights: ['Principaux concurrents locaux identifiés', 'Barrières à l\'entrée modérées'] },
+                    step4: { title: 'Synthèse', insights: ['Opportunité pour un service différencié à valeur ajoutée'] },
+                    step5: { title: 'Rentabilité', insights: ['Marge attendue: moyenne', 'Seuil de rentabilité: 12-18 mois'] }
+                },
+                datasets_found: [ { title: `${sector} - Dataset public exemple`, description: 'Description synthétique du dataset public.', organization: 'Data.gouv.fr', resources_count: 3, url: 'https://www.data.gouv.fr' } ],
+                search_terms_used: [sector, location || 'France'],
+                recommendations: [ { category: 'Action', priority: 'high', text: 'Télécharger les datasets et analyser les tendances' } ]
+            };
+
+            displayResults(mockData);
+            hideLoading();
+        }, 600);
+
+        return;
+    }
+
     try {
         const response = await fetch(`${API_URL}/api/analyze`, {
             method: 'POST',
@@ -47,22 +81,22 @@ async function handleAnalyze(e) {
             },
             body: JSON.stringify({ sector, location })
         });
-        
+
         if (!response.ok) {
             throw new Error('Erreur lors de l\'analyse');
         }
-        
+
         const data = await response.json();
-        
+
         // Calculer le temps écoulé
         const elapsedTime = ((Date.now() - startTime) / 1000).toFixed(1);
         data.client_time = elapsedTime;
-        
+
         displayResults(data);
-        
+
     } catch (error) {
         console.error('Erreur:', error);
-        alert('Une erreur s\'est produite lors de l\'analyse. Veuillez réessayer.');
+        alert('Une erreur s\'est produite lors de l\'analyse. Veuillez r\'essayer.');
     } finally {
         hideLoading();
     }
@@ -464,19 +498,26 @@ function escapeHtml(text) {
 async function checkApiHealth() {
     try {
         const response = await fetch(`${API_URL}/api/health`);
+        if (!response.ok) {
+            throw new Error('API health non-OK');
+        }
         const data = await response.json();
         console.log('API Status:', data);
-        
-        // Afficher le statut Ollama
-        if (data.ollama_status === 'available') {
-            console.log('✅ Ollama disponible - Modèle:', data.ollama_model);
-        } else if (data.ollama_status === 'model_not_found') {
-            console.warn('⚠️ Ollama disponible mais modèle non trouvé. Exécutez: ollama pull mistral');
+
+        // Si on reçoit une réponse attendue, marquer le backend comme disponible
+        BACKEND_AVAILABLE = true;
+
+        // Afficher un statut générique IA
+        if (data.ia_status === 'available' || data.ollama_status === 'available') {
+            console.log('✅ IA backend disponible - modèle:', data.ia_model || data.ollama_model || 'inconnu');
+        } else if (data.ia_status === 'model_not_found' || data.ollama_status === 'model_not_found') {
+            console.warn('⚠️ IA backend disponible mais modèle non trouvé.');
         } else {
-            console.warn('❌ Ollama non disponible - Analyses IA désactivées');
+            console.warn('ℹ️ IA backend présent mais état inconnu');
         }
     } catch (error) {
-        console.error('API non disponible:', error);
+        BACKEND_AVAILABLE = false;
+        console.info('Backend non joignable, le site utilisera le mode démo local.');
     }
 }
 
