@@ -1,0 +1,21 @@
+Étapes d’une étude de marché :
+
+1. Définir le marché : préciser la zone géographique, les segments de clientèle, 
+les produits/services visés et les besoins d’information. 
+Cette phase clarifie la problématique et le cadre de l’étude.
+
+2. Analyser la demande : estimer la taille et l’évolution du marché, 
+comprendre les comportements d’achat via enquêtes quantitatives et qualitatives.
+Créer des *personas* pour cibler les besoins clients.
+
+3. Analyser l’offre : identifier les concurrents directs et indirects, leurs stratégies, 
+forces, faiblesses et parts de marché. 
+Utiliser des outils comme Bright Data ou Similarweb, et des méthodes comme SWOT ou le mapping concurrentiel.
+
+4. Synthétiser et analyser les données : interpréter les résultats, reconnaître les limites, 
+évaluer le macro-environnement (PESTEL) et définir des objectifs SMART pour orienter la stratégie.
+
+5. Évaluer la rentabilité : chiffrer les coûts, investissements et prévisions de chiffre d’affaires 
+pour élaborer un business plan solide.
+
+Actualiser régulièrement l’étude et s’appuyer sur des organismes comme la CCI ou la CMA pour accéder à des données professionnelles.
