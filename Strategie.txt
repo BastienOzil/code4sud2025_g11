@@ -1,21 +1,42 @@
+Etude de marché:
+Elle consiste à collecter et à analyser des informations relatives à un secteur d'activité, 
+à une clientèle cible, à la concurrence et à l'environnement économique.
+
 Étapes d’une étude de marché :
 
 1. Définir le marché : préciser la zone géographique, les segments de clientèle, 
 les produits/services visés et les besoins d’information. 
 Cette phase clarifie la problématique et le cadre de l’étude.
 
+Géolocalisation, source du produit, quantité de vente.
+
 2. Analyser la demande : estimer la taille et l’évolution du marché, 
 comprendre les comportements d’achat via enquêtes quantitatives et qualitatives.
 Créer des *personas* pour cibler les besoins clients.
+
+Formulaire, graphiques, retours en ligne.
 
 3. Analyser l’offre : identifier les concurrents directs et indirects, leurs stratégies, 
 forces, faiblesses et parts de marché. 
 Utiliser des outils comme Bright Data ou Similarweb, et des méthodes comme SWOT ou le mapping concurrentiel.
 
+Faire un compraratif avec des concurents et autres entreprises sur https://www.data.gouv.fr/
+
 4. Synthétiser et analyser les données : interpréter les résultats, reconnaître les limites, 
 évaluer le macro-environnement (PESTEL) et définir des objectifs SMART pour orienter la stratégie.
 
+Désigne l'ensemble des facteurs externes, globaux et indépendants de la volonté de l'entreprise, 
+qui peuvent influencer son activité sans que celle-ci puisse les maîtriser.
+
+Les objectifs SMART sont une méthode de définition d'objectifs conçue pour garantir leur clarté, 
+leur faisabilité et leur suivi efficace. L'acronyme SMART signifie Spécifique, Mesurable, Atteignable, Pertinent ou Réaliste et Temporellement défini
+
 5. Évaluer la rentabilité : chiffrer les coûts, investissements et prévisions de chiffre d’affaires 
 pour élaborer un business plan solide.
+
+Il peut être calculé à partir du taux de marge sur coût variable et des charges fixes annuelles.
+
+Le business plan doit intégrer un compte de résultat prévisionnel, un bilan prévisionnel et un 
+tableau de flux de trésorerie prévisionnel pour visualiser la rentabilité sur plusieurs années
 
 Actualiser régulièrement l’étude et s’appuyer sur des organismes comme la CCI ou la CMA pour accéder à des données professionnelles.
