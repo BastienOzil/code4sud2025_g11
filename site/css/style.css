@@ -1,0 +1,903 @@
+/* Variables CSS - Design moderne inspiré des grandes entreprises tech */
+:root {
+    /* Palette principale - Bleu professionnel moderne (inspiré Microsoft/LinkedIn) */
+    --primary-color: #0078D4;
+    --primary-dark: #005A9E;
+    --primary-light: #50E6FF;
+    
+    /* Palette secondaire - Tons modernes (inspiré Google/Slack) */
+    --secondary-color: #34A853;
+    --accent-color: #EA4335;
+    --warning-color: #FBBC04;
+    
+    /* Tons neutres professionnels (inspiré Apple/Notion) */
+    --dark-color: #1A1A1A;
+    --dark-gray: #323130;
+    --medium-gray: #605E5C;
+    --light-gray: #F3F2F1;
+    --white: #FFFFFF;
+    
+    /* Gradients modernes */
+    --gradient-primary: linear-gradient(135deg, #0078D4 0%, #50E6FF 100%);
+    --gradient-secondary: linear-gradient(135deg, #00BCF2 0%, #0078D4 100%);
+    --gradient-dark: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%);
+    
+    /* Effets */
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 16px;
+    --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --box-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --box-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.16);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background: var(--light-gray);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    color: var(--dark-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    background: var(--white);
+    min-height: 100vh;
+}
+
+/* Header - Design moderne avec gradient */
+header {
+    background: var(--gradient-primary);
+    padding: 60px 40px;
+    margin-bottom: 0;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
+    background-size: 100px 100px;
+    opacity: 0.3;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.header-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.badges {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    color: var(--white);
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: var(--transition);
+}
+
+.badge:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Cards - Design épuré et moderne */
+.card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--box-shadow);
+    margin: 32px 0;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-2px);
+}
+
+.card h2 {
+    color: var(--dark-color);
+    margin-bottom: 24px;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Form - Style moderne et professionnel */
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 0.95rem;
+}
+
+.location-input-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #E1DFDD;
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--white);
+    font-family: inherit;
+}
+
+.location-input-wrapper input {
+    flex: 1;
+}
+
+.form-group input:hover {
+    border-color: #C8C6C4;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(0, 120, 212, 0.1);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 8px;
+    color: var(--medium-gray);
+    font-size: 0.875rem;
+}
+
+/* Buttons - Style moderne inspiré des grandes entreprises */
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 16px 32px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 120, 212, 0.2);
+    font-family: inherit;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 120, 212, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(0, 120, 212, 0.3);
+}
+
+/* Bouton de géolocalisation */
+.btn-geolocate {
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 14px 20px;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+}
+
+.btn-geolocate:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.btn-geolocate:active {
+    transform: scale(0.95);
+}
+
+.btn-geolocate.loading {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.geo-icon {
+    display: block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Carte interactive */
+.map-container {
+    width: 100%;
+    height: 350px;
+    border-radius: var(--border-radius-sm);
+    border: 2px solid #E1DFDD;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.map-container:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading - Animation moderne */
+.loading {
+    text-align: center;
+    padding: 60px 40px;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin: 32px 0;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.spinner {
+    width: 56px;
+    height: 56px;
+    border: 5px solid var(--light-gray);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    margin: 0 auto 24px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: var(--medium-gray);
+    font-size: 1.05rem;
+}
+
+/* Results */
+.results-section {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-item {
+    padding: 24px;
+    background: var(--light-gray);
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.result-item h3 {
+    color: var(--dark-color);
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.dataset-item {
+    padding: 20px;
+    background: var(--white);
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 12px;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: var(--transition);
+}
+
+.dataset-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateX(4px);
+}
+
+.dataset-item h4 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.dataset-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dataset-item a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Market Steps - Style pour les 5 étapes */
+.market-step {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.market-step:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.market-step h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.market-step p {
+    margin: 8px 0;
+    line-height: 1.8;
+}
+
+.market-step ul {
+    margin-left: 20px;
+    line-height: 1.8;
+}
+
+.recommendation {
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    transition: var(--transition);
+}
+
+.recommendation:hover {
+    transform: translateX(4px);
+}
+
+.recommendation.high {
+    background: #FFF4CE;
+    border-left: 4px solid var(--warning-color);
+}
+
+.recommendation.medium {
+    background: #E5F6FD;
+    border-left: 4px solid var(--primary-color);
+}
+
+.recommendation.info {
+    background: #DFF6DD;
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Features Grid - Design moderne et dynamique */
+.features-section {
+    margin: 48px 0;
+    padding: 0 32px;
+}
+
+.features-section h2 {
+    color: var(--dark-color);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 32px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.feature-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.feature-card p {
+    color: var(--medium-gray);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* About Section - Design professionnel */
+.about-section {
+    margin: 48px 32px;
+}
+
+.about-section p {
+    color: var(--dark-gray);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 24px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.benefits-list li {
+    padding: 16px 20px;
+    font-size: 1.05rem;
+    color: var(--dark-color);
+    background: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--secondary-color);
+    transition: var(--transition);
+}
+
+.benefits-list li:hover {
+    background: #E8F8F5;
+    transform: translateX(4px);
+}
+
+.impact {
+    background: linear-gradient(135deg, #E8F8F5 0%, #D4EDDA 100%);
+    padding: 28px;
+    border-radius: var(--border-radius);
+    margin-top: 28px;
+    border-left: 4px solid var(--secondary-color);
+    box-shadow: 0 2px 12px rgba(52, 168, 83, 0.1);
+}
+
+.impact strong {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+/* Footer - Design moderne */
+footer {
+    background: var(--dark-gray);
+    padding: 40px 32px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 60px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* Animations supplémentaires */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section séparatrice visuelle */
+.search-section {
+    background: var(--white);
+}
+
+/* Amélioration des scrollbars pour Chrome/Edge */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--medium-gray);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-gray);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    header {
+        padding: 50px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+    
+    .header-content h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    header {
+        padding: 30px 20px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0;
+    }
+    
+    .card {
+        padding: 24px;
+        margin: 16px;
+        border-radius: var(--border-radius-sm);
+    }
+    
+    .features-section {
+        padding: 20px;
+    }
+    
+    .benefits-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .location-input-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-geolocate {
+        width: 100%;
+    }
+    
+    .map-container {
+        height: 300px;
+        margin: 16px 0;
+    }
+    
+    .result-item {
+        padding: 20px;
+        margin: 12px 16px;
+    }
+    
+    .dataset-item {
+        padding: 16px;
+    }
+    
+    form .form-group {
+        margin-bottom: 16px;
+    }
+    
+    .btn-primary {
+        padding: 14px;
+        font-size: 1rem;
+    }
+    
+    .loading {
+        margin: 16px;
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 1.75rem;
+    }
+    
+    .subtitle {
+        font-size: 0.95rem;
+    }
+    
+    header {
+        padding: 24px 16px;
+    }
+    
+    .card {
+        padding: 20px;
+        margin: 12px;
+    }
+    
+    .features-section {
+        padding: 16px;
+    }
+    
+    .map-container {
+        height: 250px;
+    }
+    
+    .result-item {
+        padding: 16px;
+        margin: 8px 12px;
+    }
+    
+    .loading {
+        margin: 12px;
+        padding: 30px 16px;
+    }
+}
+
+/* Ajustements pour très petits écrans */
+@media (max-width: 360px) {
+    .header-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        margin: 8px;
+        padding: 16px;
+    }
+    
+    .result-item {
+        margin: 8px;
+    }
+}
+
+/* Styles pour les graphiques et affichage simplifié */
+.step-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.step-chart {
+    background: #F9F9F9;
+    padding: 15px;
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+}
+
+.step-insights {
+    padding: 0;
+}
+
+.insights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.insights-list li {
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    background: #F5F5F5;
+    border-left: 3px solid var(--primary-color);
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition);
+}
+
+.insights-list li:hover {
+    background: #E8F4FD;
+    transform: translateX(4px);
+}
+
+.dataset-meta {
+    display: flex;
+    gap: 20px;
+    margin: 12px 0;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    padding: 6px 12px;
+    background: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.btn-link:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
+}
+
+.alert-warning {
+    background: #FFF4CE !important;
+    border-left: 4px solid var(--warning-color) !important;
+}
+
+.text-muted {
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.suggestions {
+    margin-top: 20px;
+    padding: 15px;
+    background: #F5F5F5;
+    border-radius: var(--border-radius-sm);
+}
+
+.suggestions strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.suggestions ul {
+    margin-left: 20px;
+    line-height: 1.8;
+}
+
+/* Responsive pour les graphiques */
+@media (max-width: 768px) {
+    .step-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-chart {
+        min-height: 200px;
+    }
+    
+    .dataset-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
