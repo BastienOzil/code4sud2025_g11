@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- Chart.js pour les graphiques -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <!-- Header -->
@@ -34,36 +36,28 @@
                 <div class="card">
                     <h2>Démarrer une analyse de marché</h2>
                     <p style="color: #605E5C; margin-bottom: 24px;">
-                        Obtenez une étude de marché complète en quelques minutes grâce à l'analyse automatisée des données publiques.
+                        Obtenez une étude de marché complète en quelques minutes grâce à l'analyse automatisée des
+                        données publiques.
                     </p>
                     <form id="analyzeForm">
                         <div class="form-group">
                             <label for="sector">Secteur d'activité *</label>
-                            <input type="text" id="sector" name="sector" 
-                                   placeholder="Ex: commerce, restauration, technologie, santé..." 
-                                   required>
+                            <input type="text" id="sector" name="sector"
+                                placeholder="Ex: commerce, restauration, technologie, santé..." required>
                             <small>Quel est votre secteur d'activité ?</small>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="location">Zone géographique</label>
-                            <div class="location-input-wrapper">
-                                <input type="text" id="location" name="location" 
-                                       placeholder="Ex: Nice, Marseille, PACA...">
-                                <button type="button" id="geolocateBtn" class="btn-geolocate" title="Utiliser ma position">
-                                    <span class="geo-icon">📍</span>
-                                </button>
-                            </div>
-                            <small>Optionnel - Précisez la zone à analyser ou utilisez la géolocalisation</small>
-                        </div>
-                        
-                        <!-- Carte interactive -->
-                        <div class="form-group">
-                            <label>Carte interactive</label>
-                            <div id="map" class="map-container"></div>
-                            <small>Cliquez sur la carte pour sélectionner une zone</small>
-                        </div>
-                        
+
+                <div class="form-group">
+                    <label for="location">Région ou Zone géographique</label>
+                    <div class="location-input-wrapper">
+                        <input type="text" id="location" name="location" 
+                               placeholder="Ex: Occitanie, Toulouse, PACA, Nice, Auvergne-Rhône-Alpes...">
+                        <button type="button" id="geolocateBtn" class="btn-geolocate" title="Utiliser ma position">
+                            <span class="geo-icon">📍</span>
+                        </button>
+                    </div>
+                    <small>Optionnel - Précisez la région ou ville à analyser (détection automatique de région)</small>
+                </div>
                         <button type="submit" class="btn-primary">
                             <span class="btn-text">Lancer l'analyse intelligente</span>
                         </button>
@@ -85,55 +79,13 @@
                 </div>
             </section>
 
-            <!-- Features Section -->
-            <section class="features-section">
-                <h2>Les 5 étapes de l'analyse de marché</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">1</div>
-                        <h3>Définir le marché</h3>
-                        <p>Zone géographique, segments de clientèle, produits/services visés</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">2</div>
-                        <h3>Analyser la demande</h3>
-                        <p>Taille du marché, évolution, comportements d'achat, personas clients</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">3</div>
-                        <h3>Analyser l'offre</h3>
-                        <p>Concurrents directs/indirects, stratégies, forces, faiblesses</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">4</div>
-                        <h3>Synthétiser</h3>
-                        <p>Interpréter les résultats, PESTEL, objectifs SMART</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">5</div>
-                        <h3>Rentabilité</h3>
-                        <p>Coûts, investissements, prévisions, business plan</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">✓</div>
-                        <h3>Conformité RGPD</h3>
-                        <p>Données publiques, conformes au règlement européen</p>
-                    </div>
-                </div>
-            </section>
-
             <!-- About Section -->
             <section class="about-section">
                 <div class="card">
                     <h2>À propos de MarketAI</h2>
                     <p>
-                        <strong>MarketAI</strong> est un assistant IA développé pour <strong>Code4Sud 2025</strong> 
-                        qui révolutionne les études de marché. Fini les analyses coûteuses et 
+                        <strong>MarketAI</strong> est un assistant IA développé pour <strong>Code4Sud 2025</strong>
+                        qui révolutionne les études de marché. Fini les analyses coûteuses et
                         obsolètes ! Notre solution automatisée offre :
                     </p>
                     <ul class="benefits-list">
@@ -145,7 +97,7 @@
                         <li>100% conforme au RGPD</li>
                     </ul>
                     <p class="impact">
-                        <strong>Impact Éco Dev :</strong> Donne aux acteurs économiques locaux 
+                        <strong>Impact Éco Dev :</strong> Donne aux acteurs économiques locaux
                         un outil stratégique d'aide à la décision accessible et moderne.
                     </p>
                 </div>
@@ -153,14 +105,15 @@
         </main>
 
         <!-- Footer -->
-                    <footer style="margin-top: 50px; padding: 20px 0; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 14px;">
-                <strong>Développé pour Code4Sud 2025</strong> - Équipe 11<br>
-                Analyse de marché basée sur les données ouvertes françaises
+        <footer
+            style="margin-top: 50px; padding: 20px 0; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 14px;">
+            <strong>Développé pour Code4Sud 2025</strong> - Équipe 11<br>
+            Analyse de marché basée sur les données ouvertes françaises
     </div>
 
     <script>
         // Loader dynamique pour gérer ouverture locale (file://) depuis le dossier html/
-        (function() {
+        (function () {
             try {
                 const isFile = window.location.protocol === 'file:';
                 const path = window.location.pathname || '';
@@ -200,4 +153,5 @@
         })();
     </script>
 </body>
+
 </html>
