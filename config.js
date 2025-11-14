@@ -21,7 +21,7 @@ const CONFIG = (() => {
     // Options possibles :
     // - Heroku, Render, Railway, Vercel, etc.
     // - Ou utiliser un mode "démo" avec des données statiques
-    production: '' // À REMPLIR avec l'URL de votre API déployée
+    production: '' // À REMPLIR avec l'URL de votre API déployée (ex: 'https://votre-api.onrender.com')
   };
   
   // Sélection de l'URL selon l'environnement
@@ -61,8 +61,8 @@ const CONFIG = (() => {
     
     // Messages d'erreur personnalisés
     ERROR_MESSAGES: {
-      NO_API: 'Le site fonctionne en mode démonstration. Pour utiliser l\'analyse complète, veuillez exécuter le serveur local ou contacter l\'administrateur.',
-      FETCH_FAILED: 'Impossible de contacter le serveur d\'analyse. Vérifiez votre connexion internet.',
+      NO_API: 'Le site fonctionne en mode démonstration. Les données affichées sont des exemples. Pour utiliser l\'analyse IA réelle, exécutez le serveur local (voir README) ou contactez l\'administrateur.',
+      FETCH_FAILED: 'Impossible de contacter le serveur d\'analyse. Vérifiez votre connexion internet ou utilisez le mode démo.',
       TIMEOUT: 'L\'analyse prend plus de temps que prévu. Veuillez réessayer.',
     }
   };

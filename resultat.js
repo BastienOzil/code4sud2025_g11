@@ -269,6 +269,9 @@ function showDemoModeWarning() {
   const container = document.querySelector('.container');
   if (!container) return;
   
+  // Éviter d'ajouter plusieurs fois le bandeau
+  if (document.querySelector('.demo-warning')) return;
+  
   const warning = document.createElement('div');
   warning.className = 'demo-warning';
   warning.innerHTML = `
@@ -276,7 +279,7 @@ function showDemoModeWarning() {
       <i class="ri-information-line"></i>
       <div>
         <strong>Mode démonstration</strong>
-        <p>Les données affichées sont des exemples. Pour une analyse réelle avec l'IA, exécutez le serveur local.</p>
+        <p>Les données affichées sont des exemples. Pour une analyse réelle avec l'IA, exécutez le serveur local (voir <a href="DEPLOY.md" target="_blank" style="color:#e65100;text-decoration:underline;">guide de déploiement</a>).</p>
       </div>
       <button onclick="this.parentElement.parentElement.remove()" class="demo-close">
         <i class="ri-close-line"></i>
