@@ -63,12 +63,27 @@ async function init() {
 }
 
 async function fetchStudy() {
-  // Si en mode démo (pas d'API configurée), utiliser des données de démo
+  // Si en mode démo (pas d'API configurée), charger directement un fichier JSON local
   if (USE_DEMO_MODE || !API_ANALYZE_URL) {
-    console.warn('Mode démo activé - utilisation de données d\'exemple');
-    return generateDemoData();
+    console.warn('Mode démo activé - chargement des données depuis fichier JSON local');
+    try {
+      const response = await fetch('./sample-analysis.json');
+      if (!response.ok) {
+        throw new Error('Impossible de charger le fichier JSON de démonstration');
+      }
+      const jsonData = await response.json();
+      
+      // Le JSON a la structure: { id, prefix, generated_at, payload: { request, response } }
+      // On retourne directement response qui contient déjà le bon format
+      return jsonData.payload.response;
+    } catch (error) {
+      console.error('Erreur chargement JSON:', error);
+      // En dernier recours, utiliser des données générées en dur
+      return generateDemoData();
+    }
   }
   
+  // En mode local avec API disponible
   const response = await fetch(API_ANALYZE_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
